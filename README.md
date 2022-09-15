@@ -42,6 +42,8 @@ main branch
   &emsp; |&rarr; [./analysis/election_analysis.txt](./analysis/election_analysis.txt)  
 
 ## Election-Audit Results
+We are delighted to present our complete Election-Audit Results along with the total votes of ***369,711***, the name of County with the top turnout, ***Denver County***, and the name of winning candidate, ***Diana DeGette*** (see [Election-Audit Analysis Report](./analysis/election_analysis.txt)). To comply fully with the electoral integrity and ensure objective vote tabulation and accountable final results, the election commission and Colorado Board of Elections are welcomed to confirm our script [PyPoll_Challenge.py](./PyPoll_Challenge.py) and validate that our results are accurate and credible. The official summary of the election audit is highlighted below.
+
 Our preliminary analysis of the election show that:
 - There were **369,711** total votes cast in the election.
 - The candidates were:
@@ -68,19 +70,20 @@ Our additional analysis of the election show that:
 🎊 **Denver County**, which accumulated **82.8%** of the vote and **306,055** number of votes.
 
 ## Challenge Summary
-The breakdown of each candidate's votes and populary in each county can also be analyzed by modifying our Python code slightly. We added an extra code that let us crunch the election data further to study whether the winning candidate won the election in all counties or she only won by a lot in certain counties or the county with the largest number of turnout. Please refer to **Table I** for more details. Interestingly the winning candidate did not win in all the counties, though she did win by more than 73% overall and 78% in Denver County alone, which is the county with the largest number of turnout. The winning candidate was slightly less popular than the 1<sup>st</sup> candidate (Candidate 1: Charles Casper Stockham) in Jefferson County. The 3<sup>rd</sup> candidate (Candidate 3: Raymon Anthony Doane) received merely 3.1% of the vote regardless of county.
+The breakdown of each candidate's votes and populary in each county can also be analyzed by modifying our Python code slightly. We added an extra code that let us crunch the election data further to study whether the winning candidate won the election in all counties or she only won by a lot in certain counties or the county with the largest number of turnout. Please refer to **Table I** for more details and better understanding the detailed trends of this election. Interestingly enough, the winning candidate did not win in all the counties, though she did win by 73.8% overall and a whopping 78.2% in Denver County alone, which is the county with the largest number of turnout. The winning candidate was slightly less popular than the 1<sup>st</sup> candidate (Candidate 1: Charles Casper Stockham) in Jefferson County. The 3<sup>rd</sup> candidate (Candidate 3: Raymon Anthony Doane) received merely 3.1% of the vote regardless of county.
 
-**Table I: Runtime Performance Improvement by Code Refactoring**  
-| County Name | Diana DeGette [votes] | [%]   | Charles Casper Stockham | [%]   | Raymon Anthony Doane | [%]] |
-| :---	      |    ---:               |  ---: |     ---:                | ---:  |     ---:             | ---: |
-| Arapahoe    | 15,647	              | 63.1% |   8,302                 | 33.5% |     852              | 3.4% |
+**Table I: Official Election-Audit Summary**  
+| County Name | Diana DeGette [votes] | [%]   | Charles Casper Stockham [votes] |   [%] | Raymon Anthony Doane [votes] |  [%] |
+| :---	      |    ---:               |  ---: |    ---:                 |  ---: |    ---:              | ---: |
+| Arapahoe    |  15,647	              | 63.1% |   8,302                 | 33.5% |     852              | 3.4% |
 | Denver      | 239,282               | 78.2% |  57,188                 | 18.7% |   9,585              | 3.1% |
-| Jefferson   | 17,963	              | 46.2% |  19,723                 | 50.8% |   1,169              | 3.0% |
+| Jefferson   |  17,963	              | 46.2% |  19,723                 | 50.8% |   1,169              | 3.0% |
 | Overall     | 272,892               | 73.8% |  85,213                 | 23.0% |  11,606              | 3.1% |
 
 ## Future Work
-Two proposals for the code modifications would be:
-1. A modified code for crunching election data in each county, state, or country across the globe, which can be used globally in every county/state/country to deliver more objective results. Experimental code is highlighted below, which I also used to transform the election data into an insightful summary that can be presented to the election commission as shown in **Table I**. This is embedded in the source code (PyPoll_Challenge.py).
+Finally, we would like to propose two proposals for modifications of the code, so that it can better serve more objective election data analysis and future application of its features.
+
+1. A modified code for crunching election data in each county, state, or country across the globe, which can be used globally in every county/state/country to deliver more objective results. Experimental code is highlighted below, which I also used to transform the election data into an insightful summary that can be presented to the election commission and boards as shown in **Table I**. This added functionality is embedded in our source code ([PyPoll_Challenge.py](./PyPoll_Challenge.py)).
 ```
 # analyze candidate's vote breakdown by county
 candidate_options_bycounty = []
@@ -118,7 +121,7 @@ if bycounty != 0:
     print(f"{candidate_name}: {vote_percentage_bycounty:.1f}% ({votes_bycounty:,})\n")
   print(f"{'-'*25}\n")
 ```
-2. Code refactoring that could transform the current code into an efficient one. This will be critical, especially when the code will be applied to crunching real big data. One idea is to use more efficient data structures, probably `defaultdict()`, or recycle some existing useful modules/libraries. In this project, I also used `dictionary.get()` to retrieve the total votes by county for further analyses.
+2. Code refactoring that could transform the current code into an efficient one that is capable crunching big data. This will be critical, especially when the code will be applied to crunching real massive election data. One idea is to use more efficient data structures, probably `defaultdict()`, or recycle some existing useful modules/libraries. In this project, I also used `dictionary.get()` to retrieve the total votes by county without recalculation for further data analysis.
 ```
 # Add our dependencies.
 from collections import defaultdict
@@ -126,7 +129,7 @@ from collections import defaultdict
 (some codes here, like dictionary and list assignment)
 :
 ```
-A modified code that can be linked to more efficient data visualization tools, like Matplotlib, will also be better, so that the election commission can better analyze the tabulated votes and visualize the results quickly throughout several categories.
+A modified code that can be linked to more efficient data visualization tools, like Matplotlib, will also be better, so that the election commission and boards can better analyze the tabulated votes and quickly visualize the results throughout several categories.
 
 ## References
 [Python](https://docs.python.org/)\

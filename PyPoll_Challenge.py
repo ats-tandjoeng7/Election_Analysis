@@ -6,9 +6,9 @@ import csv
 from collections import defaultdict
 # use getcwd or "\\" on Windows to prevent path from being undiscovered
 # variable to load a file from a path.
-file_to_load = os.path.join(".\\Resources", "election_results.csv")
+file_to_load = os.path.join("./Resources", "election_results.csv")
 # variable to save a file to a path.
-file_to_save = os.path.join(".\\analysis", "election_analysis.txt")
+file_to_save = os.path.join("./analysis", "election_analysis.txt")
 # Initialize a total vote counter.
 total_votes = 0
 # Candidate list and candidate votes dictionary.

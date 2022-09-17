@@ -146,7 +146,7 @@ Some Windows O/S users could not easily access their local paths because of pers
 Although hints were hardly noticeable without examining the error messages closely, we could notice two crucial clues that helped us identify the real root cause.
 
 ### Troubleshooting Flows
-My troubleshooting progressesed in a sequential order as follows.
+My troubleshooting progressed in a sequential order as follows.
 1. Observation and replication of the symptoms.
   - Method: run three lines of code to replicate the symptoms. The `print()` displayed `.nalysis\election_analysis.txt` instead of `.\analysis\election_analysis.txt` or `./analysis/election_analysis.txt`.
   ```
@@ -158,11 +158,11 @@ My troubleshooting progressesed in a sequential order as follows.
   - Replicable in either [VS Code](https://code.visualstudio.com/updates/v1_71), [PyCharm](https://www.jetbrains.com/pycharm/), or Linux/Git Bash with [Vi/Vim](https://www.vim.org/) text editor.
   - Editor that best triggers the crucial clues: **Vi/Vim editor** in Linux/Git Bash terminal.
 2. Observation of crucial clues:
-  - Unexpected bell sound every time we execute our code even though we added nothing that should ring the bell in PyPoll_Challenge.py script.
+  - Unexpected bell sound every time we ran our code even though we added nothing that should ring the bell in PyPoll_Challenge.py script.
   - **`\x07`** showed up in front of the file path and Python IDE displayed `.nalysis\election_analysis.txt`.
   - Good text editors, e.g. Vi/Vim and VS Code, highlight certain escape characters in distinguishable font colors.
 3. Isolation of the crucial clues:
-  - **`\a`** or **`\x07`** is revealed to be one of the escape characters or [escape sequences](https://www.ibm.com/docs/en/zos/2.3.0?topic=set-escape-sequences) for alert/bell/alarm or the so-called [bell character](https://en.wikipedia.org/wiki/Bell_character).
+  - **`\a`** or **`\x07`** was revealed to be one of the escape characters or [escape sequences](https://www.ibm.com/docs/en/zos/2.3.0?topic=set-escape-sequences) for alert/bell/alarm or the so-called [bell character](https://en.wikipedia.org/wiki/Bell_character).
 
 ### Validation and Solutions
 The following codes works regardless of O/S on Windows, Linux, Macs, etc.
@@ -173,7 +173,7 @@ file_to_load = os.path.join("./Resources", "election_results.csv")
 # variable to save a file to a path.
 file_to_save = os.path.join("./analysis", "election_analysis.txt")
 ```
-Although using double back slashes \\\\ basically works for limited O/S including Windows, they are not recommended for codes that may be run in other O/S environments unless we have no other options. The other limitation is that Windows O/S does not differentiate lower/uppercase letters in file/path names. Quotes will not cause significant difference, but unlike single quotes, double quotes are generally used for string interpolation in most programming languages, including Markdown. In this case, **`'\'`** is equivalent to **`"\\"`** because the latter will be interpolated and hence both result in \\. In summary, each line in the following sample code works for handling input/output.
+Although using double back slashes \\\\ basically work for limited O/S including Windows, they are not recommended for codes that may be run in other O/S environments unless we have no other options. The other issue that Windows O/S could complicate further is it does not differentiate lower/uppercase letters in file/path names. Quotes will not cause significant difference, but unlike single quotes, double quotes are generally used for string interpolation in most programming languages, including Markdown. In this case, **`'\'`** is equivalent to **`"\\"`** because the latter will be interpolated, hence both resulting in \\. In summary, each line in the following sample code works for handling input/output.
 ```
 import os
 mypath = os.getcwd()

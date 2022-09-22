@@ -74,7 +74,7 @@ Our additional analysis of the election show that:
 🎊 **Denver County**, which accumulated **82.8%** of the vote and **306,055** number of votes.
 
 ## Challenge Summary
-The breakdown of each candidate's votes and populary in each county can also be analyzed by modifying our Python code slightly. We added an extra code that let us crunch the election data further to study whether the winning candidate won the election in all counties or she only triumphed by a lot in certain counties or the county with the largest number of turnout. Please refer to **Table I** for additional analysis details and better understanding of some unique trends of this election. Interestingly enough, the winning candidate did not win in all the counties, though she did win by 73.8% overall and a whopping 78.2% in Denver County alone, which is the county with the largest number of turnout. The winning candidate was slightly less popular than the 1<sup>st</sup> candidate (Candidate 1: Charles Casper Stockham) in Jefferson County. The 3<sup>rd</sup> candidate (Candidate 3: Raymon Anthony Doane) received merely 3.1% of the vote on average regardless of county.
+The breakdown of each candidate's votes and popularity in each county can also be analyzed by modifying our Python code slightly. We added an extra code that let us crunch the election data further to study whether the winning candidate won the election in all counties or she only triumphed by a lot in certain counties or the county with the largest number of turnout. Please refer to **Table I** for additional analysis details and better understanding of some unique trends of this election. Interestingly enough, the winning candidate did not win in all the counties, though she did win by 73.8% overall and a whopping 78.2% in Denver County alone, which is the county with the largest number of turnout. The winning candidate was slightly less popular than the 1<sup>st</sup> candidate (Candidate 1: Charles Casper Stockham) in Jefferson County. The 3<sup>rd</sup> candidate (Candidate 3: Raymon Anthony Doane) received merely 3.1% of the vote on average regardless of county.
 
 **Table I: Official Election-Audit Summary**
 
@@ -88,7 +88,7 @@ The breakdown of each candidate's votes and populary in each county can also be 
 ## Future Work
 Finally, we would like to propose two proposals for modifications of the code, such that it will serve as a more objective tool for election data analysis and have a more robust feature for future applications.
 
-1. A modified code for crunching election data in each county, state, or country across the globe, which can be used globally in every county/state/country to deliver more objective results. Experimental code is parly highlighted below, which I also used to transform the election data into an insightful summary that can be presented to the election commission and boards as shown in **Table I**. This added functionality is embedded in our source code ([PyPoll_Challenge.py](./PyPoll_Challenge.py)).
+1. A modified code for crunching election data in each county, state, or country across the globe, which can be used globally in every county/state/country to deliver more objective results. Experimental code is partly highlighted below, which I also used to transform the election data into an insightful summary that can be presented to the election commission and boards as shown in **Table I**. This added functionality is embedded in our source code ([PyPoll_Challenge.py](./PyPoll_Challenge.py)).
 
 ```
 # analyze candidate's vote breakdown by county
